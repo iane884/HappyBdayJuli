@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juli's Bday #22</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <h1>Hi Juli! Happy Birthday!</h1>
+      <p class="subtitle">Enter our anniversary to continue.</p>
+      <div class="gate-inputs">
+        <label for="gate-date" class="sr-only">Enter our anniversary date</label>
+        <input type="date" id="gate-date">
+        <button id="gate-button">Enter</button>
+      </div>
+      <p id="gate-error" class="gate-error" aria-live="polite">Close, but try again!</p>
+    </div>
+  </div>
+
+  <main id="main-content" class="hidden-content">
+    <header class="hero" id="hero">
+      <nav class="nav">
+        <div class="brand">Happy 22nd Birthday, Juli!</div>
+        <div class="nav-links">
+          <a href="#love-22">22 Things I Love About You</a>
+          <a href="#time">Our Time Together</a>
+          <a href="#memory-map">Places We've Been</a>
+          <a href="#bucket-list">Bucket List</a>
+          <a href="#crossword">Crossword</a>
+        </div>
+      </nav>
+      <div class="hero-copy">
+        <h1>Happy 22nd Birthday, Juli!</h1>
+      </div>
+    </header>
+
+    <section id="love-22" class="section">
+      <div class="section-header">
+        <h2>22 Things I Love About You</h2>
+      </div>
+      <div class="card carousel">
+        <p id="love-text">Reason goes here.</p>
+        <div class="carousel-controls">
+          <button id="prev-love" aria-label="Previous reason">← Prev</button>
+          <span id="love-indicator">1 / 22</span>
+          <button id="next-love" aria-label="Next reason">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="time" class="section">
+      <div class="section-header">
+        <h2>Our Time Together</h2>
+      </div>
+      <div class="card-grid time-grid">
+        <div class="card">
+          <p class="card-title">We’ve been together for</p>
+          <p id="together-counter" class="highlight">X years, Y months, Z days</p>
+        </div>
+        <div class="card">
+          <p class="card-title">Until our next anniversary</p>
+          <p id="next-counter" class="highlight">N months, M days</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMORY MAP -->
+    <section id="memory-map" class="section">
+      <div class="section-header">
+        <h2>The Places We've Been</h2>
+      </div>
+
+      <div class="card-grid memory-grid">
+        <!-- EVANSTON -->
+        <article class="location-card" data-location="Evanston">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('evanston2.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Evanston</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>12/08/22</figcaption>
+            </figure>
+
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston1.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>04/15/23</figcaption>
+            </figure>
+
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>11/23/23</figcaption>
+            </figure>
+
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston6.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>05/18/24</figcaption>
+            </figure>
+
+            <!-- extra Evanston photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston9.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/31/25</figcaption>
+            </figure>
+
+            <!-- extra Evanston photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('evanston4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>11/15/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- CHICAGO -->
+        <article class="location-card" data-location="Chicago">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('chicago5.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Chicago</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago11.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>08/02/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>10/12/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/25/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago5.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>04/21/25</figcaption>
+            </figure>
+
+            <!-- extra Chicago photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago10.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>02/01/25</figcaption>
+            </figure>
+
+            <!-- extra Chicago photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('chicago6.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>06/12/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+
+        <!-- VIRGINIA / ASHBURN -->
+        <article class="location-card" data-location="Ashburn">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('virginia2.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Virginia/DC</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/27/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/27/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia1.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>7/27/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia5.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/28/24</figcaption>
+            </figure>
+
+            <!-- extra Virginia photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>11/06/25</figcaption>
+            </figure>
+
+            <!-- extra Virginia photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('virginia8.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>11/06/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- CHAMPAIGN -->
+        <article class="location-card" data-location="Champaign">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('champaign3.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Champaign</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/30/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign9.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/31/23</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign2.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>04/19/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>4/20/24</figcaption>
+            </figure>
+
+            <!-- extra Champaign photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign5.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>02/07/25</figcaption>
+            </figure>
+
+            <!-- extra Champaign photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('champaign1.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>10/11/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- FLORIDA -->
+        <article class="location-card" data-location="Florida">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('florida5.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Florida</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida6.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/25/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/25/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida1.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/26/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida8.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/27/25</figcaption>
+            </figure>
+
+            <!-- extra Florida photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida2.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/28/25</figcaption>
+            </figure>
+
+            <!-- extra Florida photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('florida7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>03/28/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- COPENHAGEN -->
+        <article class="location-card" data-location="Copenhagen">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('cope1.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Copenhagen</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>9/15/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope2.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>09/17/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope5.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>09/18/24</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>09/18/24</figcaption>
+            </figure>
+
+            <!-- extra Copenhagen photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope6.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>09/20/24</figcaption>
+            </figure>
+
+            <!-- extra Copenhagen photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('cope7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>09/21/24</figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- GREECE -->
+        <article class="location-card" data-location="Greece">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('greece2.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Greece</h3>
+              <p class="expand-hint">Tap to view photos →</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece6.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/25/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece3.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/25/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece4.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/25/25</figcaption>
+            </figure>
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece1.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/26/25</figcaption>
+            </figure>
+
+            <!-- extra Greece photo 5 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece7.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/27/25</figcaption>
+            </figure>
+
+            <!-- extra Greece photo 6 -->
+            <figure>
+              <div
+                class="photo-thumb"
+                style="
+                  background-image: url('greece5.jpeg');
+                  background-size: cover;
+                  background-position: center;
+                "
+              ></div>
+              <figcaption>07/28/25</figcaption>
+            </figure>
+          </div>
+        </article>
+
+
+
+        <!-- BOSTON (locked / coming soon) -->
+        <article class="location-card" data-location="Boston">
+          <div class="location-summary">
+            <div
+              class="location-image"
+              aria-hidden="true"
+              style="
+                background-image: url('boston.jpeg');
+                background-size: cover;
+                background-position: center;
+              "
+            ></div>
+            <div>
+              <h3>Boston</h3>
+              <p>Coming soon!</p>
+            </div>
+          </div>
+          <div class="photo-grid" hidden data-locked="true"></div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MEMORY MODAL -->
+    <div id="memory-modal" class="modal" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow">Memories</p>
+            <h3 id="modal-title">Location</h3>
+            <p id="modal-desc">Describe a memory from here…</p>
+          </div>
+          <button id="modal-close" class="modal-close" aria-label="Close memory photos">×</button>
+        </div>
+        <div id="modal-grid" class="photo-grid modal-grid">
+          <!-- Filled dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- BUCKET LIST -->
+    <section id="bucket-list" class="section">
+      <div class="section-header">
+        <h2>Our Bucket List</h2>
+        <p class="subtitle">Things to do, places to go, and more.</p>
+      </div>
+      <div class="card bucket-card">
+        <div class="bucket-tabs" role="tablist">
+          <button class="bucket-tab active" data-category="do" role="tab" aria-selected="true">Things to do</button>
+          <button class="bucket-tab" data-category="go" role="tab" aria-selected="false">Places to go</button>
+          <button class="bucket-tab" data-category="eat" role="tab" aria-selected="false">Restaurants to try</button>
+          <button class="bucket-tab" data-category="watch" role="tab" aria-selected="false">Movies to watch</button>
+        </div>
+
+        <div class="bucket-add">
+          <input
+            type="text"
+            id="bucket-input"
+            placeholder="Add something to our list…"
+            aria-label="New bucket item"
+          >
+          <button id="bucket-add-button">Add</button>
+        </div>
+
+        <div class="bucket-panels">
+          <div class="bucket-panel active" data-category="do">
+            <h3>Things to do</h3>
+            <ul id="bucket-do" class="bucket-list">
+              <li>
+                <label>
+                  <input type="checkbox" data-action="toggle">
+                  <span class="bucket-text">TODO: Add a thing to do</span>
+                </label>
+                <div class="bucket-actions">
+                  <button class="bucket-edit" aria-label="Edit item">Edit</button>
+                  <button class="bucket-delete" aria-label="Delete item">Delete</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bucket-panel" data-category="go">
+            <h3>Places to go</h3>
+            <ul id="bucket-go" class="bucket-list">
+              <li>
+                <label>
+                  <input type="checkbox" data-action="toggle">
+                  <span class="bucket-text">TODO: Add a place to go</span>
+                </label>
+                <div class="bucket-actions">
+                  <button class="bucket-edit" aria-label="Edit item">Edit</button>
+                  <button class="bucket-delete" aria-label="Delete item">Delete</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bucket-panel" data-category="eat">
+            <h3>Restaurants to try</h3>
+            <ul id="bucket-eat" class="bucket-list">
+              <li>
+                <label>
+                  <input type="checkbox" data-action="toggle">
+                  <span class="bucket-text">TODO: Add a restaurant to try</span>
+                </label>
+                <div class="bucket-actions">
+                  <button class="bucket-edit" aria-label="Edit item">Edit</button>
+                  <button class="bucket-delete" aria-label="Delete item">Delete</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bucket-panel" data-category="watch">
+            <h3>Movies to watch</h3>
+            <ul id="bucket-watch" class="bucket-list">
+              <li>
+                <label>
+                  <input type="checkbox" data-action="toggle">
+                  <span class="bucket-text">TODO: Add a movie to watch</span>
+                </label>
+                <div class="bucket-actions">
+                  <button class="bucket-edit" aria-label="Edit item">Edit</button>
+                  <button class="bucket-delete" aria-label="Delete item">Delete</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CROSSWORD -->
+    <section id="crossword" class="section">
+      <div class="section-header">
+        <h2>Our Mini Crossword</h2>
+        <p class="subtitle">No NYT mini, no problem!</p>
+      </div>
+
+      <div class="card crossword-card">
+        <p class="crossword-intro">
+          Tap the squares and fill in the words!
+        </p>
+
+        <div class="crossword-layout">
+          <div
+            id="crossword-grid"
+            class="crossword-grid"
+            aria-label="Crossword puzzle"
+          ></div>
+
+          <div class="crossword-clues">
+            <div>
+              <h3 class="crossword-heading">Across</h3>
+              <ol id="crossword-clues-across" class="crossword-clue-list"></ol>
+            </div>
+            <div>
+              <h3 class="crossword-heading">Down</h3>
+              <ol id="crossword-clues-down" class="crossword-clue-list"></ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="crossword-actions">
+          <button id="crossword-check">Check Puzzle</button>
+          <p id="crossword-message" class="crossword-message">
+            Start anywhere you want and then tap "“Check Puzzle” when you're done!"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>I love you Juli! Happy Birthday! • <span id="current-year"></span></p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
