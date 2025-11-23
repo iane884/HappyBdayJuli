@@ -1,5 +1,5 @@
 // Core dates
-// TODO: Update startAnniversary if your official date changes
+
 const startAnniversary = new Date(2023, 3, 22);
 const correctGateValue = '2023-04-22';
 
@@ -44,7 +44,7 @@ function initCounters() {
   const nextEl = document.getElementById('next-counter');
 
   updateCounters();
-  // Refresh once an hour to keep days accurate
+  // refresh once an hour to keep days accurate
   setInterval(updateCounters, 60 * 60 * 1000);
 
   function updateCounters() {
@@ -94,7 +94,7 @@ function diffUntil(from, to) {
 }
 
 function getNextAnniversary(now) {
-  let next = new Date(now.getFullYear(), 3, 22); // Month is zero-indexed (April = 3)
+  let next = new Date(now.getFullYear(), 3, 22); // month is zero-indexed (April = 3)
   if (now > next) {
     next = new Date(now.getFullYear() + 1, 3, 22);
   }
@@ -124,7 +124,6 @@ function initMemoryModal() {
 
     modalTitle.textContent = heading;
 
-    // We don't want a description line anymore – hide it.
     modalDesc.textContent = '';
     modalDesc.style.display = 'none';
 
@@ -175,14 +174,14 @@ function initBucketList() {
 
   function loadItems() {
     try {
-      // Prefer new v2 storage
+      // prefer new v2 storage
       const storedV2 = localStorage.getItem(STORAGE_KEY);
       if (storedV2) {
         const parsed = JSON.parse(storedV2);
         if (Array.isArray(parsed)) return parsed;
       }
 
-      // Fallback: migrate old single-list storage into "Things to do"
+      // fallback: migrate old single-list storage into "things to do"
       const legacy = localStorage.getItem(LEGACY_KEY);
       if (legacy) {
         const legacyParsed = JSON.parse(legacy);
@@ -198,7 +197,7 @@ function initBucketList() {
       // ignore parse/storage errors
     }
 
-    // Seed from existing markup if no storage found
+    // seed from existing markup if no storage found
     const seeds = [];
     Object.entries(listsByCategory).forEach(([category, listEl]) => {
       if (!listEl) return;
@@ -218,7 +217,7 @@ function initBucketList() {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     } catch (e) {
-      // Ignore storage errors
+      // ignore storage errors
     }
   }
 
@@ -244,12 +243,12 @@ function initBucketList() {
   }
 
   function render() {
-    // Clear all lists
+    // clear all lists
     Object.values(listsByCategory).forEach((listEl) => {
       if (listEl) listEl.innerHTML = '';
     });
 
-    // Rebuild from items
+    // rebuild from items
     items.forEach((item, idx) => {
       const listEl = listsByCategory[item.category] || listsByCategory.do;
       if (!listEl) return;
@@ -394,18 +393,18 @@ function initCrossword() {
 
   if (!gridEl || !acrossList || !downList || !checkBtn || !messageEl) return;
 
-  // Layout: 15 rows x 20 columns (matches your layout)
+  // layout: 15 rows x 20 columns
   const rows = 15;
   const cols = 20;
 
-  // Ensure grid columns match this layout
+  // ensure grid columns match this layout
   gridEl.style.display = 'grid';
   gridEl.style.gridTemplateColumns = `repeat(${cols}, 26px)`;
   gridEl.style.gridAutoRows = '26px';
 
-  // WORD PLACEMENT (same layout + numbers you’ve been using)
+  // word placement
   const words = [
-    // -------- ACROSS --------
+    // -------- across --------
     {
       number: 1,
       answer: 'QUESTIONS',
@@ -455,13 +454,13 @@ function initCrossword() {
       direction: 'across'
     },
 
-    // -------- DOWN --------
+    // -------- down --------
     {
       number: 2,
       answer: 'ICESKATING',
       clue: 'Our first date',
       row: 0,
-      col: 5, // crosses QUESTIONS
+      col: 5, // crosses questions
       direction: 'down'
     },
     {
@@ -490,7 +489,7 @@ function initCrossword() {
     }
   ];
 
-  // ---------- BUILD GRID DATA ----------
+  // ---------- build grid data ----------
   const gridData = Array.from({ length: rows }, () =>
     Array.from({ length: cols }, () => ({
       letter: null,
@@ -498,12 +497,12 @@ function initCrossword() {
     }))
   );
 
-  // Inputs at [row][col]
+  // inputs at [row][col]
   const cellInputs = Array.from({ length: rows }, () =>
     Array.from({ length: cols }, () => null)
   );
 
-  // For word navigation
+  // for word navigation
   const wordCells = []; // wordCells[i] = array of inputs for words[i]
   const cellWordMap = new Map(); // input -> { across: wordIndex|null, down: wordIndex|null }
   const acrossWordIndices = [];
@@ -513,7 +512,7 @@ function initCrossword() {
   acrossList.innerHTML = '';
   downList.innerHTML = '';
 
-  // First pass: fill gridData + clue lists
+  // first pass: fill gridData + clue lists
   words.forEach((word) => {
     const clean = word.answer.toUpperCase();
     const { row, col, direction, number } = word;
@@ -545,7 +544,7 @@ function initCrossword() {
     }
   });
 
-  // ---------- RENDER GRID ----------
+  // ---------- render grid ----------
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
       const data = gridData[r][c];
@@ -576,7 +575,7 @@ function initCrossword() {
     }
   }
 
-  // ---------- INDEX WORD CELLS & MAP INPUTS → WORDS ----------
+  // ---------- index word cells; map inputs->words ----------
   words.forEach((word, wi) => {
     const clean = word.answer.toUpperCase();
     const { row, col, direction } = word;
@@ -608,7 +607,7 @@ function initCrossword() {
     wordCells[wi] = cells;
   });
 
-  // ---------- TYPING DIRECTION & NAV ----------
+  // ---------- typing direction + nav ----------
   let currentDirection = 'across'; // 'across' or 'down'
   let activeCell = null;
 
@@ -676,21 +675,21 @@ function initCrossword() {
     }
   }
 
-  // Backspace: delete backwards through current word in current mode
+  // backspace: delete backwards through current word in current mode
   function backspaceStep(input) {
     if (!input) return;
 
     let r = Number(input.dataset.row);
     let c = Number(input.dataset.col);
 
-    // If this cell has a letter, clear it and stay
+    // if this cell has a letter, clear it and stay
     if (input.value && input.value.trim() !== '') {
       input.value = '';
       input.classList.remove('correct', 'incorrect');
       return;
     }
 
-    // Else move to previous cell in current direction and clear there
+    // else move to previous cell in current direction and clear there
     let pr = r;
     let pc = c;
 
@@ -712,8 +711,8 @@ function initCrossword() {
     }
   }
 
-  // Jump to next word (across or down) when Tab/Enter is pressed
-    // Jump to next word (across or down) when Tab/Enter is pressed
+  // jump to next word (across or down) when tab/enter is pressed
+    // jump to next word (across or down) when tab/enter is pressed
   function jumpToNextWord(fromInput) {
     if (!fromInput) return;
 
@@ -741,7 +740,7 @@ function initCrossword() {
 
     const cells = wordCells[targetWordIndex];
     if (cells && cells.length > 0) {
-      // Prefer the first EMPTY cell in the word; if all filled, go to the first cell
+      // prefer the first empty cell in the word; if all filled, go to the first cell
       let targetCell = cells.find(
         (cell) => !cell.value || cell.value.trim() === ''
       );
@@ -769,7 +768,7 @@ function initCrossword() {
       const isDelete =
         e.inputType && e.inputType.startsWith('delete');
 
-      // Only auto-move when adding a character, not deleting
+      // only auto-move when adding a character, not deleting
       if (!isDelete && input.value.trim() !== '') {
         moveToNextCell(input);
       }
@@ -780,11 +779,11 @@ function initCrossword() {
         e.preventDefault();
         backspaceStep(input);
       } else if (e.key === ' ') {
-        // Space toggles across/down mode
+        // space toggles across/down mode
         e.preventDefault();
         toggleDirection();
       } else if (e.key === 'Tab' || e.key === 'Enter') {
-        // Jump to next word in current mode
+        // jump to next word in current mode
         e.preventDefault();
         jumpToNextWord(input);
       } else if (e.key === 'ArrowRight') {
@@ -807,7 +806,7 @@ function initCrossword() {
     });
   });
 
-  // ---------- CHECK ANSWERS ----------
+  // ---------- check puzzle ----------
   checkBtn.addEventListener('click', () => {
     let allFilled = true;
     let allCorrect = true;
@@ -862,7 +861,7 @@ window.onload = () => {
   initMemoryModal();
   initBucketList();
   initLoveCarousel();
-  initCrossword();          // <- add this line
+  initCrossword();
   document.getElementById('current-year').textContent = new Date().getFullYear();
 };
 
